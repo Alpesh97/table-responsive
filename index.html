@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Responsive Table</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .container {
+            max-width: 1220px;
+            position: relative;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .main-content{
+            background-color: #071b32;
+            padding: 50px 0;
+        }
+        table{
+            color: #ffffff;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 5px;
+        }
+        table thead th{
+            font-size: 16px;
+            line-height: 1.2;
+            font-weight: 600;
+            text-align: left;
+            padding: 15px;
+        }
+        table tbody td{
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: 400;
+            padding: 15px;
+        }
+        table thead tr{
+            background-image: linear-gradient(to top, rgba(144, 199, 70, 0.7), rgba(124,176,55,0.7) , rgba(152,204,79,0.7));
+        }
+        table tbody tr{
+            background-image: linear-gradient(to top,rgba(174,0,20,0.7), rgba(141,0,16,0.7), rgba(173,0,20,0.7));
+        }
+
+        .overflow-table-wrapper table{
+            min-width: 767px;
+        }
+        .overflow-table-wrapper{
+            overflow-x: auto;
+        }
+        .overflow-table-wrapper thead th:first-child{
+            text-align: left;
+        }
+        .overflow-table-wrapper tbody td:first-child{
+            text-align: left;
+        }
+
+
+        .data-label-table-wrapper {
+            margin-top: 50px;
+        }
+
+        @media(max-width: 479px) {
+            .data-label-table-wrapper thead{
+                display: none;
+            }  
+            .data-label-table-wrapper tbody td{
+                display: block;
+                text-align: right;
+            }
+            .data-label-table-wrapper tbody td::before {
+                content: attr(data-label);    
+                float: left; 
+                padding-right: 15px; 
+                font-weight: 600;
+                color: #90c746;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <main class="main-content">
+            <div class="container">
+                <div class="overflow-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> Name Of City</th>
+                                <th> Franchise Location</th>
+                                <th> Age</th>
+                                <th> Score by Judges</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> Long Beach State </td>
+                                <td> Long Beach, California </td>
+                                <td> 24 </td>
+                                <td> 19 </td>
+                            </tr>
+                            <tr>
+                                <td>Abbotsfor </td>
+                                <td> Abbotsford, Canada</td>
+                                <td> 18 </td>
+                                <td> 17 </td>
+                            </tr>
+                            <tr>
+                                <td> Bathurs</td>
+                                <td> Bathurst, Australia</td>
+                                <td> 16 </td>
+                                <td> 14 </td>
+                            </tr>
+                            <tr>
+                                <td> Edmonton - West </td>
+                                <td> Edmonton, Canada </td>
+                                <td> 21 </td>
+                                <td> 12 </td>
+                            </tr>
+                            <tr>
+                                <td> Toronto - Warden & Sheppard </td>
+                                <td> Toronto - Canada </td>
+                                <td> 26 </td>
+                                <td> 10 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="data-label-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> Date</th>
+                                <th> Week</th>
+                                <th> Competition Theme</th>
+                                <th>Flight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Date"> June 7-11 </td>
+                                <td data-label="Week"> 1</td>
+                                <td data-label="Competition Theme"> Gridlock Blocks with Minecraft</td>
+                                <td data-label="Flight"> Flight 1 </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date"> June 14-18 </td>
+                                <td data-label="Week"> 2 </td>
+                                <td data-label="Competition Theme"> Scraping the Sky with Minecraft</td>
+                                <td data-label="Flight"> Flight 1 </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date"> June 21-25 </td>
+                                <td data-label="Week"> 3 </td>
+                                <td data-label="Competition Theme"> Going Green with Minecraft</td>
+                                <td data-label="Flight"> Flight 1 </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date"> June 28-July 2 </td>
+                                <td data-label="Week"> 4</td>
+                                <td data-label="Competition Theme"> Maximum Power with Minecraft</td>
+                                <td data-label="Flight"> Flight 1 </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date"> July 5-9 </td>
+                                <td data-label="Week"> 5</td>
+                                <td data-label="Competition Theme"> City Life with Minecraft</td>
+                                <td data-label="Flight"> Flight 1 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</html>
